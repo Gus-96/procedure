@@ -1,9 +1,11 @@
 <h1>Search Results</h1>
-<p><%= link_to "Back", new_search_path %></p>
 
 <% if @search.search_procedure.empty? %>
     <p>No procedure were found.</p>
+    <p><%= link_to "Back", new_search_path %></p>
 <% else %>
+
+<p><%= link_to 'New Procedure', new_procedure_path %></p>
     <table>
         <thead>
             <tr>
@@ -25,4 +27,5 @@
             <% end %>
         </tbody>
 </table>
+<p><%= link_to "Back", new_search_path %></p>
 <% end %>

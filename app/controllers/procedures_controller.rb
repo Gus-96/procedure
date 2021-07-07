@@ -3,8 +3,8 @@ class ProceduresController < ApplicationController
 
   # GET /procedures or /procedures.json
   def index
-    @procedures = Procedure.search(params[:search])
-    #@procedures = Procedure.all
+    #@procedures = Procedure.search(params[:search])
+    @procedures = Procedure.all
   end
 
   # GET /procedures/1 or /procedures/1.json

@@ -1,5 +1,5 @@
-<h1>Advanced Search</h1>
-
+<h1>Search Procedure</h1>
+<p><%= link_to 'New Procedure', new_procedure_path %></p>
 <%= form_with model: @search do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -7,8 +7,8 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
     
-
-
-    <%= f.submit "Search" %>
-    <%= link_to "Back", '/procedures' %>
+    <div class="actions">
+       <p><%= f.submit "Search" %></p>
+    </div>
 <% end %>
+
