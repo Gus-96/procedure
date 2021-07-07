@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+    <div class="field">
+      <%= form_with(url: '/procedures', method: 'get', local: true) do %>
+        <%= text_field_tag(:search) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+
 <h1>Procedures</h1>
 
 <table>
