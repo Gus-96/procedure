@@ -10,5 +10,15 @@
   <%= @procedure.description %>
 </p>
 
+<p>
+  <strong>created_at:</strong>
+  <%= @procedure.created_at %>
+</p>
+
+<p>
+  <strong>updated_at:</strong>
+  <%= @procedure.updated_at %>
+</p>
+
 <%= link_to 'Edit', edit_procedure_path(@procedure) %> |
 <%= link_to 'Back', procedures_path %>
