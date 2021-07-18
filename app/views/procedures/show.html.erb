@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <h1>
   <%= @procedure.title %>
+  </h1>
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @procedure.description %>
 </p>
 
@@ -20,5 +20,5 @@
   <%= @procedure.updated_at %>
 </p>
 
-<%= link_to 'Edit', edit_procedure_path(@procedure) %> |
-<%= link_to 'Back', procedures_path %>
+<%= link_to 'Back', procedures_path, class:"btn btn-secondary", role:"button" %> 
+<%= link_to 'Edit', edit_procedure_path(@procedure), class:"btn btn-primary", role:"button" %> 
