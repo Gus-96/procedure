@@ -1,14 +1,18 @@
 <h1>Search Procedure</h1>
-<p><%= link_to 'New Procedure', new_procedure_path %></p>
-<%= form_with model: @search do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<p><%= link_to 'New Procedure', new_procedure_path, class:"btn btn-primary", role:"button"%></p>
 
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    
-    <div class="actions">
-       <p><%= f.submit "Search" %></p>
+<%= form_with model: @search do |f| %>
+    <div class="mb-3">
+        <%= f.label :title, class:"form-label"%>
+        <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :description, class:"form-label"%>
+        <%= f.text_field :description, class:"form-control" %> 
+    </div>
+
+    <div class="mb-3">
+        <%= f.submit "Search" ,  class:"btn btn-secondary" %>
     </div>
 <% end %>
 
