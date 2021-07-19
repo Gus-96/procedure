@@ -1,8 +1,8 @@
 <h1>Search Results</h1>
 
 <% if @search.search_procedure.empty? %>
-    <p>No procedure were found.</p>
-    <p><%= link_to "Back", new_search_path %></p>
+    <p>No procedure were found. Try again !</p>
+    <p><%= link_to "Back", new_search_path, type:"button", class:"btn btn-secondary" %></p>
 <% else %>
 
 <p><%= link_to 'New Procedure', new_procedure_path , class:"btn btn-primary", role:"button" %></p>
