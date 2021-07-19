@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1>Procedures</h1>
 <p><%= link_to 'New Procedure', new_procedure_path , class:"btn btn-primary", role:"button" %></p>
+
 <table class="table"> 
   <thead>
     <tr>
@@ -22,4 +23,5 @@
     <% end %>
   </tbody>
 </table>
+
 <p><%= link_to "Advanced Search", new_search_path, type:"button", class:"btn btn-secondary" %></p>
