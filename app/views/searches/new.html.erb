@@ -2,10 +2,12 @@
 <p><%= link_to 'New Procedure', new_procedure_path, class:"btn btn-primary", role:"button"%></p>
 
 <%= form_with model: @search do |f| %>
+
     <div class="mb-3">
         <%= f.label :title, class:"form-label"%>
         <%= f.text_field :title, class:"form-control" %>
     </div>
+
     <div class="mb-3">
         <%= f.label :description, class:"form-label"%>
         <%= f.text_field :description, class:"form-control" %> 
@@ -14,5 +16,6 @@
     <div class="mb-3">
         <%= f.submit "Search" ,  class:"btn btn-secondary" %>
     </div>
+    
 <% end %>
 
