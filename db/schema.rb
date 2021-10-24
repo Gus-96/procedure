@@ -15,8 +15,25 @@ ActiveRecord::Schema.define(version: 2021_07_07_173340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "coins", force: :cascade do |t|
+    t.string "description"
+    t.string "acronym"
+    t.string "url_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "mining_type_id"
+    t.index ["mining_type_id"], name: "index_coins_on_mining_type_id"
+  end
+
   create_table "genero_usuario", primary_key: "genero_id", id: :integer, default: nil, force: :cascade do |t|
     t.text "tipo_genero"
+  end
+
+  create_table "mining_types", force: :cascade do |t|
+    t.string "description"
+    t.string "acronym"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "procedures", force: :cascade do |t|
@@ -47,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_07_07_173340) do
     t.integer "genero_id", null: false
   end
 
+  add_foreign_key "coins", "mining_types"
   add_foreign_key "telefone_usuario", "usuario", primary_key: "usuario_id", name: "usuario_id"
   add_foreign_key "usuario", "genero_usuario", column: "usuario_id", primary_key: "genero_id", name: "genero_id"
 end

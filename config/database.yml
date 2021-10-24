@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: homedb
+  database: sample_postgres_test
   pool: 5
-  username: postgres
-  password: password
+  username: sample_postgres
+  password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: homedb
+  database: sample_postgres_production
   pool: 5
-  username: postgres
-  password: password
+  username: sample_postgres
+  password:
