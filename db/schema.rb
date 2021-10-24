@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2021_07_07_173340) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "genero_usuario", primary_key: "genero_id", id: :integer, default: nil, force: :cascade do |t|
+    t.text "tipo_genero"
+  end
+
   create_table "procedures", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -26,4 +33,20 @@ ActiveRecord::Schema.define(version: 2021_07_07_173340) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "telefone_usuario", primary_key: "telefone_id", id: :integer, default: nil, force: :cascade do |t|
+    t.text "tipo_telefone"
+    t.text "numero_telefone"
+    t.integer "usuario_id", null: false
+    t.index ["usuario_id"], name: "fki_usuario_id"
+  end
+
+  create_table "usuario", primary_key: "usuario_id", id: :integer, default: nil, force: :cascade do |t|
+    t.text "nome"
+    t.text "idade"
+    t.text "cpf"
+    t.integer "genero_id", null: false
+  end
+
+  add_foreign_key "telefone_usuario", "usuario", primary_key: "usuario_id", name: "usuario_id"
+  add_foreign_key "usuario", "genero_usuario", column: "usuario_id", primary_key: "genero_id", name: "genero_id"
 end
